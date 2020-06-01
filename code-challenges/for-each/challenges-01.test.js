@@ -38,7 +38,6 @@ const addValues = (arr, value) => {
 };
 
 const addNumbers = (num, arr, times, callback) => {
-
   for (let i = 0; i < times; i++) {
     callback(arr, num);
   };
@@ -69,7 +68,7 @@ const createList = (availableItems) => {
   // Solution code here...
   let list = [];
   availableItems.forEach((value) => {
-    if (value.available == true) {
+    if (value.available === true) {
       list.push(value.name);
     }
   });
@@ -92,18 +91,30 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.forEach((value) => {
+    if (value % 3 === 0 && value % 5 === 0) {
+      newArr.push('Fizz Buzz');
+    } else if (value % 5 === 0) {
+      newArr.push('Buzz');
+    } else if (value % 3 === 0) {
+      newArr.push('Fizz');
+    } else {
+      newArr.push(value);
+    }
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
+ 
 All the code below will verify that your functions are working to solve the challenges.
-
+ 
 DO NOT CHANGE any of the below code.
-
+ 
 Run your tests from the console: jest challenges-01.test.js
-
+ 
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
