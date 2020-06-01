@@ -16,11 +16,6 @@ const speaker = (message, callback) => {
   return callback(message);
 };
 
-describe('Testing challenge 1', () => {
-  test('It should return the message with all uppercase characters', () => {
-    expect(speaker('hello 301 students!', greeting)).toStrictEqual('HELLO 301 STUDENTS!');
-  });
-});
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -51,17 +46,12 @@ const addNumbers = (num, arr, times, callback) => {
 };
 
 
-describe('Testing challenge 2', () => {
-  test('It should add the number 8 to the array five times', () => {
-    expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
-    expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
-  });
-});
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named createList that takes in an array of the current store intentory.
+Write a function named createList that takes in an array of the current store inventory.
 
 The inventory is formatted like this:
 [
@@ -77,7 +67,15 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  let list = [];
+  availableItems.forEach((value) => {
+    if (value.available == true) {
+      list.push(value.name);
+    }
+  });
+  return list;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -114,7 +112,12 @@ describe('Testing challenge 1', () => {
   });
 });
 
-
+describe('Testing challenge 2', () => {
+  test('It should add the number 8 to the array five times', () => {
+    expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
+    expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
+  });
+});
 
 describe('Testing challenge 3', () => {
   const inventory = [{ name: 'apples', available: true }, { name: 'pears', available: true }, { name: 'oranges', available: false }, { name: 'bananas', available: true }, { name: 'blueberries', available: false }];
