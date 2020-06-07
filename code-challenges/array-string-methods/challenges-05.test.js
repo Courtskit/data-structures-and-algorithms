@@ -38,6 +38,14 @@ let $ = createSnippetWithJQuery(`
 
 const templateWithJQuery = () => {
   // Solution code here...
+  starWarsPeople.forEach(value => {
+    let section = $('<section></section>');
+    section.append(`<h2>${value.name}</h2>`);
+    section.append(`<h3>${value.height}</h3>`);
+    section.append(`<p>${value.eye_color}</p>`);
+    $('main').append(section);
+  });
+
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -337,6 +345,6 @@ xdescribe('Testing challenge 11', () => {
   });
 });
 
-function createSnippetWithJQuery(html){
+function createSnippetWithJQuery(html) {
   return cheerio.load(html);
 };
