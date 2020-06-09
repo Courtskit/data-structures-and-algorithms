@@ -21,6 +21,7 @@ let $ = createSnippetWithJQuery(`
 
 const addTea = () => {
   // Solution code here..
+  // code 
 }
 
 /* ------------------------------------------------------------------------------------------------
