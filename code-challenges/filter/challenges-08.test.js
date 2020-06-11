@@ -22,7 +22,7 @@ const createServer = () => {
 
 
 function sayHello(request, response) {
-  // Solution code here...
+  response.send('Hello from the back-end');
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,10 +33,7 @@ Write a function named oddValues that, given an array of integers as input, uses
 For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-const oddValues = (arr) => {
-  // Solution code here...
-};
-
+const oddValues = (arr) => arr.filter(num => num % 2 !== 0);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -50,6 +47,8 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
   // Solution code here...
+  const newArray = arr.filter(string => string.match(/[aeiou]/g));
+  return newArray;
 };
 
 
@@ -62,7 +61,12 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  let newArray = arr.filter((num) => {
+    if (!forbiddenValues.includes(num)) {
+      return num;
+    }
+  })
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
