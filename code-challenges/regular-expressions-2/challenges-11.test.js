@@ -13,6 +13,10 @@ You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => {
   // Solution code here...
+  const name = people.map(value => {
+    return `${value.firstName} ${value.lastName}`
+  })
+  return name;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,7 +28,8 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
-  // Solution code here...
+  let regex = /^\d{4}$/;
+  return regex.test(pin.toString())
 };
 
 /* ------------------------------------------------------------------------------------------------
