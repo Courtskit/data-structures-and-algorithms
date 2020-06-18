@@ -10,6 +10,12 @@ E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
   // Solution code here...
+  let max = arr[0];
+  let number = arr.reduce((acc, value, index) => {
+    max = arr[index + 1] > max ? arr[index + 1] : max;
+    return max;
+  })
+  return number;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,8 +41,11 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
-
+  let finalArr = [];
+  for (let i = 0; i < hoursOpen.length; i++) {
+    finalArr[i] = firstPike[i] + seaTac[i] + seattleCenter[i] + capHill[i] + alkiBeach[i];
+  }
+  return finalArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
